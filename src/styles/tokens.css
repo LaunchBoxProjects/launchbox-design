@@ -1,0 +1,63 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --lb-primitives-color-signal: #ef2c60;
+  --lb-primitives-color-charcoal: #3e3e3e;
+  --lb-primitives-color-cream: #f5f1e7;
+  --lb-primitives-font-family-display: Afacad;
+  --lb-primitives-font-family-body: Albert Sans;
+  --lb-primitives-font-size-xs: 14;
+  --lb-primitives-font-size-md: 22;
+  --lb-primitives-font-size-3xl: 96;
+  --lb-primitives-font-size-4xl: 190;
+  --lb-primitives-font-size-2xl: 72;
+  --lb-primitives-font-size-lg: 32;
+  --lb-primitives-font-size-xl: 42;
+  --lb-primitives-font-size-5xl: 290;
+  --lb-primitives-font-size-sm: 16;
+  --lb-primitives-font-weight-light: 300;
+  --lb-primitives-font-weight-regular: 400;
+  --lb-primitives-font-weight-bold: 700;
+  --lb-primitives-font-weight-semibold: 600;
+  --lb-primitives-font-line-height-normal: 1.4;
+  --lb-primitives-font-line-height-tight: 1;
+  --lb-semantic-typography-display-hero-font-families: Afacad;
+  --lb-semantic-typography-display-hero-text-case: uppercase;
+  --lb-semantic-typography-display-section-font-families: Afacad;
+  --lb-semantic-typography-display-section-text-case: uppercase;
+  --lb-semantic-typography-display-heading-font-families: Afacad;
+  --lb-semantic-typography-display-heading-text-case: uppercase;
+  --lb-semantic-typography-display-subheading-font-families: Afacad;
+  --lb-semantic-typography-display-subheading-text-case: uppercase;
+  --lb-semantic-typography-body-large-font-families: Albert Sans;
+  --lb-semantic-typography-body-regular-font-families: Albert Sans;
+  --lb-semantic-typography-body-small-font-families: Albert Sans;
+  --lb-semantic-color-surface-page: var(--lb-primitives-color-cream);
+  --lb-semantic-color-text-primary: var(--lb-primitives-color-charcoal);
+  --lb-semantic-color-text-inverse: var(--lb-primitives-color-cream);
+  --lb-semantic-color-action-default: var(--lb-primitives-color-signal);
+  --lb-semantic-color-border-default: var(--lb-primitives-color-charcoal);
+  --lb-semantic-typography-display-hero-font-sizes: var(--lb-primitives-font-size-5xl);
+  --lb-semantic-typography-display-hero-font-weights: var(--lb-primitives-font-weight-semibold);
+  --lb-semantic-typography-display-hero-line-heights: var(--lb-primitives-font-line-height-tight);
+  --lb-semantic-typography-display-section-font-sizes: var(--lb-primitives-font-size-4xl);
+  --lb-semantic-typography-display-section-font-weights: var(--lb-primitives-font-weight-bold);
+  --lb-semantic-typography-display-section-line-heights: var(--lb-primitives-font-line-height-tight);
+  --lb-semantic-typography-display-heading-font-sizes: var(--lb-primitives-font-size-3xl);
+  --lb-semantic-typography-display-heading-font-weights: var(--lb-primitives-font-weight-bold);
+  --lb-semantic-typography-display-heading-line-heights: var(--lb-primitives-font-line-height-tight);
+  --lb-semantic-typography-display-subheading-font-sizes: var(--lb-primitives-font-size-xl);
+  --lb-semantic-typography-display-subheading-font-weights: var(--lb-primitives-font-weight-regular);
+  --lb-semantic-typography-display-subheading-line-heights: var(--lb-primitives-font-line-height-tight);
+  --lb-semantic-typography-body-large-font-sizes: var(--lb-primitives-font-size-lg);
+  --lb-semantic-typography-body-large-font-weights: var(--lb-primitives-font-weight-regular);
+  --lb-semantic-typography-body-large-line-heights: var(--lb-primitives-font-line-height-normal);
+  --lb-semantic-typography-body-regular-font-sizes: var(--lb-primitives-font-size-md);
+  --lb-semantic-typography-body-regular-font-weights: var(--lb-primitives-font-weight-regular);
+  --lb-semantic-typography-body-regular-line-heights: var(--lb-primitives-font-line-height-normal);
+  --lb-semantic-typography-body-small-font-sizes: var(--lb-primitives-font-size-sm);
+  --lb-semantic-typography-body-small-font-weights: var(--lb-primitives-font-weight-regular);
+  --lb-semantic-typography-body-small-line-heights: var(--lb-primitives-font-line-height-normal);
+}

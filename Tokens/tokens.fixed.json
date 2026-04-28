@@ -1,0 +1,290 @@
+{
+  "Primitives": {
+    "color": {
+      "signal": {
+        "$value": "#ef2c60",
+        "$type": "color",
+        "$description": ""
+      },
+      "charcoal": {
+        "$value": "#3e3e3e",
+        "$type": "color",
+        "$description": ""
+      },
+      "cream": {
+        "$value": "#F5F1E7",
+        "$type": "color",
+        "$description": ""
+      }
+    },
+    "font": {
+      "family": {
+        "display": {
+          "$value": [
+            "Afacad"
+          ],
+          "$type": "fontFamilies",
+          "$description": ""
+        },
+        "body": {
+          "$value": [
+            "Albert Sans"
+          ],
+          "$type": "fontFamilies",
+          "$description": ""
+        }
+      },
+      "size": {
+        "xs": {
+          "$value": "14",
+          "$type": "fontSizes",
+          "$description": ""
+        },
+        "md": {
+          "$value": "22",
+          "$type": "fontSizes",
+          "$description": ""
+        },
+        "3xl": {
+          "$value": "96",
+          "$type": "fontSizes",
+          "$description": ""
+        },
+        "4xl": {
+          "$value": "190",
+          "$type": "fontSizes",
+          "$description": ""
+        },
+        "2xl": {
+          "$value": "72",
+          "$type": "fontSizes",
+          "$description": ""
+        },
+        "lg": {
+          "$value": "32",
+          "$type": "fontSizes",
+          "$description": ""
+        },
+        "xl": {
+          "$value": "42",
+          "$type": "fontSizes",
+          "$description": ""
+        },
+        "5xl": {
+          "$value": "290",
+          "$type": "fontSizes",
+          "$description": ""
+        },
+        "sm": {
+          "$value": "16",
+          "$type": "fontSizes",
+          "$description": ""
+        }
+      },
+      "weight": {
+        "light": {
+          "$value": "300",
+          "$type": "fontWeights",
+          "$description": ""
+        },
+        "regular": {
+          "$value": "400",
+          "$type": "fontWeights",
+          "$description": ""
+        },
+        "bold": {
+          "$value": "700",
+          "$type": "fontWeights",
+          "$description": ""
+        },
+        "semibold": {
+          "$value": "600",
+          "$type": "fontWeights",
+          "$description": ""
+        }
+      },
+      "lineHeight": {
+        "normal": {
+          "$value": "1.4",
+          "$type": "number",
+          "$description": ""
+        },
+        "tight": {
+          "$value": "1",
+          "$type": "number",
+          "$description": ""
+        }
+      }
+    }
+  },
+  "Semantic": {
+    "color": {
+      "surface": {
+        "page": {
+          "$value": "{Primitives.color.cream}",
+          "$type": "color",
+          "$description": ""
+        }
+      },
+      "text": {
+        "primary": {
+          "$value": "{Primitives.color.charcoal}",
+          "$type": "color",
+          "$description": ""
+        },
+        "inverse": {
+          "$value": "{Primitives.color.cream}",
+          "$type": "color",
+          "$description": ""
+        }
+      },
+      "action": {
+        "default": {
+          "$value": "{Primitives.color.signal}",
+          "$type": "color",
+          "$description": ""
+        }
+      },
+      "border": {
+        "default": {
+          "$value": "{Primitives.color.charcoal}",
+          "$type": "color",
+          "$description": ""
+        }
+      }
+    },
+    "typography": {
+      "display": {
+        "hero": {
+          "$value": {
+            "fontFamilies": [
+              "{Primitives.font.family.display}"
+            ],
+            "fontSizes": "{Primitives.font.size.5xl}",
+            "fontWeights": "{Primitives.font.weight.semibold}",
+            "lineHeights": "{Primitives.font.lineHeight.tight}",
+            "textCase": "uppercase"
+          },
+          "$type": "typography",
+          "$description": ""
+        },
+        "section": {
+          "$value": {
+            "fontFamilies": [
+              "{Primitives.font.family.display}"
+            ],
+            "fontSizes": "{Primitives.font.size.4xl}",
+            "fontWeights": "{Primitives.font.weight.bold}",
+            "lineHeights": "{Primitives.font.lineHeight.tight}",
+            "textCase": "uppercase"
+          },
+          "$type": "typography",
+          "$description": ""
+        },
+        "heading": {
+          "$value": {
+            "fontFamilies": [
+              "{Primitives.font.family.display}"
+            ],
+            "fontSizes": "{Primitives.font.size.3xl}",
+            "fontWeights": "{Primitives.font.weight.bold}",
+            "lineHeights": "{Primitives.font.lineHeight.tight}",
+            "textCase": "uppercase"
+          },
+          "$type": "typography",
+          "$description": ""
+        },
+        "subheading": {
+          "$value": {
+            "fontFamilies": [
+              "{Primitives.font.family.display}"
+            ],
+            "fontSizes": "{Primitives.font.size.xl}",
+            "fontWeights": "{Primitives.font.weight.regular}",
+            "lineHeights": "{Primitives.font.lineHeight.tight}",
+            "textCase": "uppercase"
+          },
+          "$type": "typography",
+          "$description": ""
+        }
+      },
+      "body": {
+        "large": {
+          "$value": {
+            "fontFamilies": [
+              "{Primitives.font.family.body}"
+            ],
+            "fontSizes": "{Primitives.font.size.lg}",
+            "fontWeights": "{Primitives.font.weight.regular}",
+            "lineHeights": "{Primitives.font.lineHeight.normal}"
+          },
+          "$type": "typography",
+          "$description": ""
+        },
+        "regular": {
+          "$value": {
+            "fontFamilies": [
+              "{Primitives.font.family.body}"
+            ],
+            "fontSizes": "{Primitives.font.size.md}",
+            "fontWeights": "{Primitives.font.weight.regular}",
+            "lineHeights": "{Primitives.font.lineHeight.normal}"
+          },
+          "$type": "typography",
+          "$description": ""
+        },
+        "small": {
+          "$value": {
+            "fontFamilies": [
+              "{Primitives.font.family.body}"
+            ],
+            "fontSizes": "{Primitives.font.size.sm}",
+            "fontWeights": "{Primitives.font.weight.regular}",
+            "lineHeights": "{Primitives.font.lineHeight.normal}"
+          },
+          "$type": "typography",
+          "$description": ""
+        }
+      }
+    }
+  },
+  "$themes": [
+    {
+      "id": "e154837b-e0ce-803a-8007-ed7b3ba325e6",
+      "name": "Light",
+      "group": "Colors",
+      "description": "",
+      "isSource": false,
+      "selectedTokenSets": {
+        "Primitives": "enabled"
+      }
+    },
+    {
+      "id": "e154837b-e0ce-803a-8007-ed7b3ba445c8",
+      "name": "Dark",
+      "group": "Colors",
+      "description": "",
+      "isSource": false,
+      "selectedTokenSets": {}
+    },
+    {
+      "id": "e154837b-e0ce-803a-8007-ed7b3ba445ca",
+      "name": "Mode 1",
+      "group": "Tokens",
+      "description": "",
+      "isSource": false,
+      "selectedTokenSets": {}
+    }
+  ],
+  "$metadata": {
+    "tokenSetOrder": [
+      "Primitives",
+      "Semantic"
+    ],
+    "activeThemes": [],
+    "activeSets": [
+      "Primitives",
+      "Semantic"
+    ]
+  }
+}

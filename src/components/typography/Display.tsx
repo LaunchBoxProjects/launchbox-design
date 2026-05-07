@@ -5,7 +5,7 @@ interface DisplayProps {
 }
 
 const sizeClamp: Record<string, string> = {
-  hero:       'clamp(60px, 12vw, 190px)',
+  hero:       'clamp(60px, 11vw, 190px)',
   section:    'clamp(48px, 10vw, 96px)',
   heading:    'clamp(32px, 6vw, 60px)',
   subheading: 'clamp(24px, 4vw, 42px)',

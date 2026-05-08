@@ -19,8 +19,6 @@ body {
 .inner {
   width: 90%;
   margin: 0 auto;
-  border-left: 1px solid var(--lb-semantic-color-border-default);
-  border-right: 1px solid var(--lb-semantic-color-border-default);
 }
 
 @media (max-width: 768px) {

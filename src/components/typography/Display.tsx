@@ -25,6 +25,7 @@ export default function Display({
       textTransform: 'uppercase',
       color: 'var(--lb-semantic-color-text-primary)',
       margin: 0,
+      whiteSpace: 'nowrap',
     }}>
       {children}
     </Tag>

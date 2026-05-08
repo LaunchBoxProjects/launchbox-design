@@ -36,12 +36,11 @@ export default function Hero() {
           display: 'flex',
           borderBottom: border,
         }}>
-          {/* Left column — type */}
-          <div style={{
-            flex: '1 1 50%',
-            padding: 'clamp(24px, 4vw, 60px) clamp(16px, 3%, 48px)',
-            borderRight: border,
-          }}>
+            {/* Left column — type */}
+            <div style={{
+              flex: '1 1 50%',
+              padding: 'clamp(24px, 4vw, 60px) clamp(16px, 3%, 48px)',
+            }}>
             <div style={{ overflow: 'hidden' }}>
               <div ref={line1Ref}>
                 <Display as="h1" size="hero">LAUNCH</Display>
@@ -74,7 +73,6 @@ export default function Hero() {
             padding: '20px clamp(16px, 3%, 48px)',
             display: 'flex',
             alignItems: 'center',
-            borderRight: border,
           }}>
             <Body size="small">
               Brand and design systems for early-stage startups.

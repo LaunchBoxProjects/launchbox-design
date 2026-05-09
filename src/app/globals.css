@@ -26,3 +26,41 @@ body {
     width: 98%;
   }
 }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+} 
+
+.project-card-inner {
+  filter: saturate(0.3);
+  transition: filter 0.5s ease;
+}
+
+.project-card-inner:hover {
+  filter: saturate(1);
+}
+
+.diss-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 520px) {
+  .diss-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .deck-columns {
+    flex-direction: column;
+  }
+}

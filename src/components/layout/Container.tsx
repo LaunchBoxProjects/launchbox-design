@@ -97,12 +97,13 @@ export default function Container({ children }: ContainerProps) {
           ref={leftBorderRef}
           style={{
             position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '1px',
-            height: '100%',
-            backgroundColor: borderColor,
-            transformOrigin: 'top',
+              top: 0,
+              left: 0,
+              width: '1px',
+              height: '100%',
+              backgroundColor: borderColor,
+              transformOrigin: 'top',
+              zIndex: 10,
           }}
         />
 
@@ -111,12 +112,13 @@ export default function Container({ children }: ContainerProps) {
           ref={rightBorderRef}
           style={{
             position: 'absolute',
-            top: 0,
-            right: 0,
-            width: '1px',
-            height: '100%',
-            backgroundColor: borderColor,
-            transformOrigin: 'top',
+              top: 0,
+              right: 0,
+              width: '1px',
+              height: '100%',
+              backgroundColor: borderColor,
+              transformOrigin: 'top',
+              zIndex: 10,
           }}
         />
 

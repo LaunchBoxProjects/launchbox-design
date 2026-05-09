@@ -11,8 +11,6 @@ import Script from 'next/script';
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function Hero() {
-  // CHANGED: removed line1Ref, line2Ref, line3Ref — SplitText finds elements via data-line
-  // ADDED: heroRef — needed for gsap.context() scope
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -39,7 +37,7 @@ export default function Hero() {
         });
       });
 
-    }, heroRef); // CHANGED: was missing heroRef here
+    }, heroRef);
 
     return () => ctx.revert();
   }, []);
@@ -47,20 +45,18 @@ export default function Hero() {
   const border = '1px solid var(--lb-semantic-color-border-default)';
 
   return (
-    // CHANGED: added ref={heroRef} and removed Display import — using data-line divs directly
     <div ref={heroRef}>
-
       <Container>
         <div style={{
           display: 'flex',
           borderBottom: border,
         }}>
+
           {/* Left column — type */}
           <div style={{
             flex: '1 1 50%',
             padding: 'clamp(24px, 4vw, 60px) clamp(16px, 3%, 48px)',
           }}>
-            {/* CHANGED: removed overflow hidden wrappers and refs, added data-line attributes */}
             <div
               data-line="0"
               style={{
@@ -105,9 +101,19 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right column — empty */}
-          <div style={{ flex: '0 1 50%' }} />
-        </div>
+          {/* Right column — manifesto */}
+          <div style={{
+            flex: '0 1 50%',
+            padding: 'clamp(24px, 4vw, 60px) clamp(16px, 3%, 48px)',
+            display: 'flex',
+            alignItems: 'flex-end',
+          }}>
+            <Body size="small">
+              {"Nobody cares about your brand if you don't. Nobody cares about brands and products that are like all the other ones. Nobody cares about brands that don't stand for anything."}
+            </Body>
+          </div>
+
+        </div>{/* end flex row */}
 
         {/* Button row */}
         <div style={{
@@ -142,32 +148,32 @@ export default function Hero() {
             </button>
           </div>
         </div>
+
       </Container>
 
       {/* Video section */}
-<Container>
-  <div style={{
-    aspectRatio: '16 / 9',
-    overflow: 'hidden',
-    position: 'relative',
-  }}>
-    <Script src="https://fast.wistia.com/player.js" strategy="afterInteractive" />
-    <Script src="https://fast.wistia.com/embed/0zs6dabbwt.js" strategy="afterInteractive" />
-    {/* @ts-ignore */}
-    <wistia-player
-      media-id="0zs6dabbwt"
-      aspect="1.7777777777777777"
-      style={{
-        width: '100%',
-        height: '100%',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        borderRadius: '0',
-      }}
-    />
-  </div>
-</Container>
+      <Container>
+        <div style={{
+          aspectRatio: '16 / 9',
+          overflow: 'hidden',
+          position: 'relative',
+        }}>
+          <Script src="https://fast.wistia.com/player.js" strategy="afterInteractive" />
+          <Script src="https://fast.wistia.com/embed/0zs6dabbwt.js" strategy="afterInteractive" />
+          {/* @ts-ignore */}
+          <wistia-player
+            media-id="0zs6dabbwt"
+            aspect="1.7777777777777777"
+            style={{
+              width: '100%',
+              height: '100%',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+            }}
+          />
+        </div>
+      </Container>
 
     </div>
   );

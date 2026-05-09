@@ -100,6 +100,7 @@ export default function DeckInABox() {
     <Container>
       <div
         ref={sectionRef}
+        className="deck-columns"
         style={{
           backgroundColor: 'var(--lb-semantic-color-action-default)',
           display: 'flex',

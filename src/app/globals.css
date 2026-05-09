@@ -53,13 +53,13 @@ body {
   grid-template-columns: repeat(2, 1fr);
 }
 
-@media (max-width: 520px) {
+@media (max-width: 600px) {
   .diss-grid {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 600px) {
   .deck-columns {
     flex-direction: column;
   }

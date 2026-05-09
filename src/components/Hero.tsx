@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 import Container from '@/components/layout/Container';
 import Body from '@/components/typography/Body';
+import Script from 'next/script';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -144,27 +145,29 @@ export default function Hero() {
       </Container>
 
       {/* Video section */}
-      <Container>
-        <div style={{
-          aspectRatio: '16 / 9',
-          overflow: 'hidden',
-          position: 'relative',
-        }}>
-          <iframe
-            src="https://www.youtube.com/embed/vV8mY9MsbeE?autoplay=1&mute=1&loop=1&playlist=vV8mY9MsbeE"
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              border: 'none',
-            }}
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-          />
-        </div>
-      </Container>
+<Container>
+  <div style={{
+    aspectRatio: '16 / 9',
+    overflow: 'hidden',
+    position: 'relative',
+  }}>
+    <Script src="https://fast.wistia.com/player.js" strategy="afterInteractive" />
+    <Script src="https://fast.wistia.com/embed/0zs6dabbwt.js" strategy="afterInteractive" />
+    {/* @ts-ignore */}
+    <wistia-player
+      media-id="0zs6dabbwt"
+      aspect="1.7777777777777777"
+      style={{
+        width: '100%',
+        height: '100%',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        borderRadius: '0',
+      }}
+    />
+  </div>
+</Container>
 
     </div>
   );

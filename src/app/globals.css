@@ -63,4 +63,12 @@ body {
   .deck-columns {
     flex-direction: column;
   }
+} 
+
+csswistia-player {
+  border-radius: 0 !important;
+}
+
+wistia-player::part(container) {
+  border-radius: 0 !important;
 }

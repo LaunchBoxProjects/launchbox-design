@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import gsap from 'gsap';
 import Container from '@/components/layout/Container';
 import Body from '@/components/typography/Body';
-
+import CTAPair from '@/components/ui/CTAPair';
 
 const plans = [
   {
@@ -13,6 +13,7 @@ const plans = [
     tagline: 'Raise the bar.',
     price: '$7999',
     frequency: 'One Time',
+    stripeLink: 'https://buy.stripe.com/5kQ4gz5FJ9FCahl4ilbfO0y',
     description: 'Get started quickly with everything you need to raise and launch. A solid foundation delivered in 30 days. Get positive feedback from 3 investors, or we keep working.',
     features: [
       'Brand Design',
@@ -27,6 +28,7 @@ const plans = [
     tagline: 'Branding built for scale.',
     price: '$4999',
     frequency: 'Per Month',
+    stripeLink: 'https://buy.stripe.com/dR67w78cUeem0OA7sC',
     description: 'Scalable brand development and design for fast moving startups. Get everything you need to launch, from UI/UX and landing pages, to social media and pitch decks.',
     features: [
       'Unlimited design, 1 at a time',
@@ -41,6 +43,7 @@ const plans = [
     tagline: 'Agility and consistency.',
     price: '$8999',
     frequency: 'Per Month',
+    stripeLink: 'https://buy.stripe.com/00w4gz6JNaJG6154ilbfO0B',
     description: 'A perfect package for incubators and holdcos with multiple brands under one roof. More bandwidth for your partners, one locus of responsibility, and world-class quality.',
     features: [
       'Unlimited brands, 3 designs at a time',
@@ -50,7 +53,6 @@ const plans = [
     ],
   },
 ];
-
 
 function Checkmark() {
   return (
@@ -97,7 +99,7 @@ function PlanCard({ plan, isMiddle }: PlanProps) {
           ease: 'power3.inOut',
         });
       }
-    }, 200); // slight delay — let colour invert register first
+    }, 200);
   };
 
   const handleMouseLeave = () => {
@@ -111,6 +113,7 @@ function PlanCard({ plan, isMiddle }: PlanProps) {
       });
     }
   };
+
   return (
     <div
       onMouseEnter={handleMouseEnter}
@@ -118,17 +121,15 @@ function PlanCard({ plan, isMiddle }: PlanProps) {
       style={{
         position: 'relative',
         overflow: 'hidden',
-        borderRight: isMiddle
-          ? border
-          : 'none',
-        borderLeft: isMiddle
-          ? border
-          : 'none',
+        borderRight: isMiddle ? border : 'none',
+        borderLeft: isMiddle ? border : 'none',
       }}
     >
       {/* Pricing card — always underneath */}
       <div style={{
         padding: 'clamp(32px, 4vw, 48px) clamp(16px, 3%, 40px)',
+        display: 'flex',
+        flexDirection: 'column',
       }}>
         {/* Plan name */}
         <div style={{
@@ -188,62 +189,70 @@ function PlanCard({ plan, isMiddle }: PlanProps) {
             </div>
           ))}
         </div>
+
+        {/* CTA buttons */}
+        <div style={{ marginTop: 'auto' }}>
+          <CTAPair
+            primaryLabel="Get started"
+            primaryHref={plan.stripeLink}
+          />
+        </div>
       </div>
 
       {/* Cover card — slides up on hover */}
       <div
         ref={coverRef}
-            style={{
-                position: 'absolute',
-                inset: 0,
-                backgroundColor: hovered
-                ? 'var(--lb-semantic-color-action-default)'
-                : 'var(--lb-semantic-color-surface-page)',
-                padding: 'clamp(32px, 4vw, 48px) clamp(16px, 3%, 40px)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                textAlign: 'center',
-                cursor: 'pointer',
-                transition: 'background-color 0.2s ease',
-            }}
+        style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundColor: hovered
+            ? 'var(--lb-semantic-color-action-default)'
+            : 'var(--lb-semantic-color-surface-page)',
+          padding: 'clamp(32px, 4vw, 48px) clamp(16px, 3%, 40px)',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center',
+          cursor: 'pointer',
+          transition: 'background-color 0.2s ease',
+        }}
       >
         <div style={{
-    fontFamily: 'var(--font-afacad)',
-    fontSize: 'clamp(24px, 3vw, 36px)',
-    fontWeight: '700',
-    textTransform: 'uppercase',
-    color: hovered
-      ? 'var(--lb-semantic-color-text-inverse)'
-      : 'var(--lb-semantic-color-text-primary)',
-    marginBottom: '24px',
-    lineHeight: '1',
-    transition: 'color 0.2s ease',
-  }}>
-    {plan.audience}
-  </div>
-  <div style={{
-    width: '60px',
-    borderTop: hovered
-      ? '2px solid var(--lb-semantic-color-text-inverse)'
-      : '2px solid var(--lb-semantic-color-border-default)',
-    marginBottom: '24px',
-    transition: 'border-color 0.2s ease',
-  }} />
-  <div style={{
-    fontFamily: 'var(--font-afacad)',
-    fontSize: 'clamp(20px, 2.5vw, 32px)',
-    fontWeight: '400',
-    color: hovered
-      ? 'var(--lb-semantic-color-text-inverse)'
-      : 'var(--lb-semantic-color-text-primary)',
-    fontStyle: 'italic',
-    transition: 'color 0.2s ease',
-  }}>
-    {plan.tagline}
-  </div>
-</div>
+          fontFamily: 'var(--font-afacad)',
+          fontSize: 'clamp(24px, 3vw, 36px)',
+          fontWeight: '700',
+          textTransform: 'uppercase',
+          color: hovered
+            ? 'var(--lb-semantic-color-text-inverse)'
+            : 'var(--lb-semantic-color-text-primary)',
+          marginBottom: '24px',
+          lineHeight: '1',
+          transition: 'color 0.2s ease',
+        }}>
+          {plan.audience}
+        </div>
+        <div style={{
+          width: '60px',
+          borderTop: hovered
+            ? '2px solid var(--lb-semantic-color-text-inverse)'
+            : '2px solid var(--lb-semantic-color-border-default)',
+          marginBottom: '24px',
+          transition: 'border-color 0.2s ease',
+        }} />
+        <div style={{
+          fontFamily: 'var(--font-afacad)',
+          fontSize: 'clamp(20px, 2.5vw, 32px)',
+          fontWeight: '400',
+          color: hovered
+            ? 'var(--lb-semantic-color-text-inverse)'
+            : 'var(--lb-semantic-color-text-primary)',
+          fontStyle: 'italic',
+          transition: 'color 0.2s ease',
+        }}>
+          {plan.tagline}
+        </div>
+      </div>
 
     </div>
   );

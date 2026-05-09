@@ -2,18 +2,16 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import Image from 'next/image';
 import Container from '@/components/layout/Container';
 
 const logos = [
-  'UMYUM',
-  'NIKE',
-  'SAMSUNG',
-  'TOHORA',
-  'PUMA',
-  'ADOBE',
-  'MGM',
-  'BIO-RAD',
-  'KELLOGGS',
+  { src: '/logos/umyum.png', alt: 'UMYUM', width: 180 },
+  { src: '/logos/pika_logo.png', alt: 'Pika', width: 180 },
+  { src: '/logos/Nike_logo.png', alt: 'Nike', width: 180 },
+  { src: '/logos/samsung.png', alt: 'Samsung', width: 180 },
+  { src: '/logos/Tohora.png', alt: 'Tohora', width: 180 },
+  { src: '/logos/puma.png', alt: 'Puma', width: 180 },
 ];
 
 export default function LogoTicker() {
@@ -27,7 +25,7 @@ export default function LogoTicker() {
 
     const tween = gsap.to(track, {
       x: -totalWidth,
-      duration: 20,
+      duration: 25,
       ease: 'none',
       repeat: -1,
     });
@@ -37,7 +35,6 @@ export default function LogoTicker() {
     };
   }, []);
 
-  // Double the logos to create seamless loop
   const allLogos = [...logos, ...logos];
 
   return (
@@ -59,20 +56,26 @@ export default function LogoTicker() {
           }}
         >
           {allLogos.map((logo, i) => (
-            <span
+            <div
               key={i}
               style={{
-                fontFamily: 'var(--font-afacad)',
-                fontSize: '22px',
-                fontWeight: '400',
-                letterSpacing: '0.05em',
-                textTransform: 'uppercase',
-                color: 'var(--lb-semantic-color-text-primary)',
                 flexShrink: 0,
+                display: 'flex',
+                alignItems: 'center',
               }}
             >
-              {logo}
-            </span>
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width}
+                height={70}
+                style={{
+                  objectFit: 'contain',
+                  opacity: 0.8,
+                  filter: 'grayscale(100%)',
+                }}
+              />
+            </div>
           ))}
         </div>
       </div>

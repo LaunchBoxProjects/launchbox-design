@@ -152,14 +152,14 @@ export default function DeckInABox() {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            gap: '8px',
+            gap: '16px',
           }}>
             {features.map((feature, i) => (
               <div
                 key={i}
                 style={{
                   fontFamily: 'var(--font-albert-sans)',
-                  fontSize: '16px',
+                  fontSize: 'clamp(18px, 2vw, 28px)',
                   fontWeight: '400',
                   color: 'var(--lb-semantic-color-text-inverse)',
                   letterSpacing: '0.02em',

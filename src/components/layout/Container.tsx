@@ -8,9 +8,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 interface ContainerProps {
   children: React.ReactNode;
+  id?: string;
 }
 
-export default function Container({ children }: ContainerProps) {
+export default function Container({ children, id }: ContainerProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const leftBorderRef = useRef<HTMLDivElement>(null);
   const rightBorderRef = useRef<HTMLDivElement>(null);
@@ -84,6 +85,7 @@ export default function Container({ children }: ContainerProps) {
   return (
     <section
       ref={sectionRef}
+      id={id}
       style={{
         width: '100%',
         borderBottom: `1px solid ${borderColor}`,

@@ -35,7 +35,7 @@ function BoxArrowIcon({ color }: { color: string }) {
 }
 
 function DeckButton() {
-  const btnRef = useRef<HTMLButtonElement>(null);
+  const btnRef = useRef<HTMLAnchorElement>(null);
   const iconRef = useRef<HTMLDivElement>(null);
 
   const handleMouseEnter = () => {
@@ -61,8 +61,11 @@ function DeckButton() {
   };
 
   return (
-    <button
+    <a
       ref={btnRef}
+      href="https://cal.com/neilmcbean/30-min-chitchat"
+      target="_blank"
+      rel="noopener noreferrer"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{
@@ -79,13 +82,14 @@ function DeckButton() {
         cursor: 'pointer',
         letterSpacing: '0.05em',
         whiteSpace: 'nowrap',
+        textDecoration: 'none',
       }}
     >
       Get decked out.
       <div ref={iconRef}>
         <BoxArrowIcon color="currentColor" />
       </div>
-    </button>
+    </a>
   );
 }
 

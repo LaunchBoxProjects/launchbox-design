@@ -17,19 +17,26 @@ export default function CTAPair({
     <div style={{
       display: 'flex',
       alignItems: 'stretch',
+      width: '100%',
     }}>
-      <CTAButton
-        label={secondaryLabel}
-        href={secondaryHref}
-        variant="secondary"
-        icon={false}
-      />
-      <CTAButton
-        label={primaryLabel}
-        href={primaryHref}
-        variant="primary"
-        icon={true}
-      />
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <CTAButton
+          label={secondaryLabel}
+          href={secondaryHref}
+          variant="secondary"
+          icon={false}
+          fullWidth
+        />
+      </div>
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <CTAButton
+          label={primaryLabel}
+          href={primaryHref}
+          variant="primary"
+          icon={true}
+          fullWidth
+        />
+      </div>
     </div>
   );
 }

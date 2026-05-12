@@ -267,7 +267,7 @@ function PlanCard({ plan, isMiddle }: PlanProps) {
 
 export default function Pricing() {
   return (
-    <Container>
+    <Container id="pricing">
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',

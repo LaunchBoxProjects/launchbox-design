@@ -8,6 +8,7 @@ interface CTAButtonProps {
   href: string;
   variant?: 'primary' | 'secondary';
   icon?: boolean;
+  fullWidth?: boolean;
 }
 
 export default function CTAButton({
@@ -15,6 +16,7 @@ export default function CTAButton({
   href,
   variant = 'primary',
   icon = true,
+  fullWidth = false,
 }: CTAButtonProps) {
   const btnRef = useRef<HTMLAnchorElement>(null);
   const isPrimary = variant === 'primary';
@@ -48,16 +50,20 @@ export default function CTAButton({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{
-        display: 'inline-flex',
+        display: fullWidth ? 'flex' : 'inline-flex',
         alignItems: 'center',
+        justifyContent: fullWidth ? 'center' : undefined,
         gap: '12px',
+        width: fullWidth ? '100%' : undefined,
         backgroundColor: isPrimary
           ? 'var(--lb-semantic-color-action-default)'
           : 'var(--lb-semantic-color-surface-page)',
         color: isPrimary
           ? 'var(--lb-semantic-color-text-inverse)'
           : 'var(--lb-semantic-color-text-primary)',
-        border: isPrimary
+        border: 'none',
+        borderTop: '1px solid var(--lb-semantic-color-border-default)',
+        borderRight: isPrimary
           ? 'none'
           : '1px solid var(--lb-semantic-color-border-default)',
         fontFamily: 'var(--font-albert-sans)',

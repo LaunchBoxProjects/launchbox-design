@@ -109,7 +109,7 @@ export default function Hero() {
             alignItems: 'flex-end',
           }}>
             <Body size="small">
-              {"Nobody cares about your brand if you don't. Nobody cares about brands and products that are like all the other ones. Nobody cares about brands that don't stand for anything."}
+              {"Nobody cares about your brand if you don't. Nobody cares about brands and products that are like all the other ones. Nobody cares about brands that don't stand for anything. You aren't building for nobody. You're building for somebody."}
             </Body>
           </div>
 
@@ -132,20 +132,26 @@ export default function Hero() {
             </Body>
           </div>
           <div style={{ flex: '1 0 50%', display: 'flex' }}>
-            <button style={{
-              width: '100%',
-              backgroundColor: 'var(--lb-semantic-color-action-default)',
-              color: 'var(--lb-semantic-color-text-inverse)',
-              fontFamily: 'var(--font-albert-sans)',
-              fontSize: '16px',
-              fontWeight: '400',
-              padding: '20px 24px',
-              border: 'none',
-              cursor: 'pointer',
-              letterSpacing: '0.05em',
-            }}>
+            <a
+              href="#pricing"
+              style={{
+                width: '100%',
+                backgroundColor: 'var(--lb-semantic-color-action-default)',
+                color: 'var(--lb-semantic-color-text-inverse)',
+                fontFamily: 'var(--font-albert-sans)',
+                fontSize: '16px',
+                fontWeight: '400',
+                padding: '20px 24px',
+                border: 'none',
+                cursor: 'pointer',
+                letterSpacing: '0.05em',
+                display: 'block',
+                textAlign: 'center',
+                textDecoration: 'none',
+              }}
+            >
               Plans &amp; Pricing
-            </button>
+            </a>
           </div>
         </div>
 
@@ -157,6 +163,7 @@ export default function Hero() {
           aspectRatio: '16 / 9',
           overflow: 'hidden',
           position: 'relative',
+          borderRadius: 0, // Explicitly override any corner radius
         }}>
           <Script src="https://fast.wistia.com/player.js" strategy="afterInteractive" />
           <Script src="https://fast.wistia.com/embed/0zs6dabbwt.js" strategy="afterInteractive" />
@@ -170,6 +177,8 @@ export default function Hero() {
               position: 'absolute',
               top: 0,
               left: 0,
+             borderRadius: '0px !important', // Ensure player itself also has square corners
+       
             }}
           />
         </div>

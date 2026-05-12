@@ -121,77 +121,84 @@ function PlanCard({ plan, isMiddle }: PlanProps) {
       style={{
         position: 'relative',
         overflow: 'hidden',
+        height: '100%',
         borderRight: isMiddle ? border : 'none',
         borderLeft: isMiddle ? border : 'none',
       }}
     >
       {/* Pricing card — always underneath */}
       <div style={{
-        padding: 'clamp(32px, 4vw, 48px) clamp(16px, 3%, 40px)',
         display: 'flex',
         flexDirection: 'column',
+        height: '100%',
       }}>
-        {/* Plan name */}
         <div style={{
-          fontFamily: 'var(--font-afacad)',
-          fontSize: 'clamp(24px, 3vw, 42px)',
-          fontWeight: '700',
-          textTransform: 'uppercase',
-          color: 'var(--lb-semantic-color-text-primary)',
-          marginBottom: '16px',
-        }}>
-          {plan.name}
-        </div>
-
-        {/* Price */}
-        <div style={{
-          fontFamily: 'var(--font-afacad)',
-          fontSize: 'var(--lb-primitives-font-size-2xl)',
-          fontWeight: '700',
-          color: 'var(--lb-semantic-color-text-primary)',
-          lineHeight: '1',
-          marginBottom: '8px',
-        }}>
-          {plan.price}
-        </div>
-
-        {/* Frequency */}
-        <div style={{
-          fontFamily: 'var(--font-albert-sans)',
-          fontSize: '16px',
-          fontWeight: '700',
-          color: 'var(--lb-semantic-color-text-primary)',
-          marginBottom: '8px',
-        }}>
-          {plan.frequency}
-        </div>
-
-        {/* Description */}
-        <Body size="small">
-          {plan.description}
-        </Body>
-
-        {/* Features */}
-        <div style={{
+          flex: 1,
+          padding: 'clamp(32px, 4vw, 48px) clamp(16px, 3%, 40px)',
           display: 'flex',
           flexDirection: 'column',
-          gap: '12px',
-          margin: '24px 0',
         }}>
-          {plan.features.map((feature, i) => (
-            <div key={i} style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
-            }}>
-              <Checkmark />
-              <Body size="small">{feature}</Body>
-            </div>
-          ))}
+          {/* Plan name */}
+          <div style={{
+            fontFamily: 'var(--font-afacad)',
+            fontSize: 'clamp(24px, 3vw, 42px)',
+            fontWeight: '700',
+            textTransform: 'uppercase',
+            color: 'var(--lb-semantic-color-text-primary)',
+            marginBottom: '16px',
+          }}>
+            {plan.name}
+          </div>
+
+          {/* Price */}
+          <div style={{
+            fontFamily: 'var(--font-afacad)',
+            fontSize: 'var(--lb-primitives-font-size-2xl)',
+            fontWeight: '700',
+            color: 'var(--lb-semantic-color-text-primary)',
+            lineHeight: '1',
+            marginBottom: '8px',
+          }}>
+            {plan.price}
+          </div>
+
+          {/* Frequency */}
+          <div style={{
+            fontFamily: 'var(--font-albert-sans)',
+            fontSize: '16px',
+            fontWeight: '700',
+            color: 'var(--lb-semantic-color-text-primary)',
+            marginBottom: '8px',
+          }}>
+            {plan.frequency}
+          </div>
+
+          {/* Description */}
+          <Body size="small">
+            {plan.description}
+          </Body>
+
+          {/* Features */}
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '12px',
+            margin: '24px 0',
+          }}>
+            {plan.features.map((feature, i) => (
+              <div key={i} style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+              }}>
+                <Checkmark />
+                <Body size="small">{feature}</Body>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* CTA buttons */}
-        <div style={{ marginTop: 'auto' }}>
+        <div style={{ width: '100%' }}>
           <CTAPair
             primaryLabel="Get started"
             primaryHref={plan.stripeLink}
@@ -264,6 +271,7 @@ export default function Pricing() {
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
+        alignItems: 'stretch',
       }}>
         {plans.map((plan, i) => (
           <PlanCard

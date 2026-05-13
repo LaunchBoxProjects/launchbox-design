@@ -72,3 +72,28 @@ csswistia-player {
 wistia-player::part(container) {
   border-radius: 0 !important;
 }
+
+@media (max-width: 600px) {
+  .hero-columns {
+    flex-direction: column;
+  }
+
+  .hero-columns > div {
+    flex: 1 1 100% !important;
+    width: 100%;
+  }
+
+  .hero-button-row {
+    flex-direction: column;
+  }
+
+  .hero-button-row > div {
+    flex: 1 1 100% !important;
+    width: 100%;
+  }
+
+  .hero-columns > div:last-child {
+    padding-top: 0 !important;
+    align-items: flex-start !important;
+  }
+}

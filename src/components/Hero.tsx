@@ -47,10 +47,13 @@ export default function Hero() {
   return (
     <div ref={heroRef}>
       <Container>
-        <div style={{
-          display: 'flex',
-          borderBottom: border,
-        }}>
+        <div
+          className="hero-columns"
+          style={{
+            display: 'flex',
+            borderBottom: border,
+          }}
+        >
 
           {/* Left column — type */}
           <div style={{
@@ -116,11 +119,14 @@ export default function Hero() {
         </div>{/* end flex row */}
 
         {/* Button row */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'stretch',
-          flexWrap: 'wrap',
-        }}>
+        <div
+          className="hero-button-row"
+          style={{
+            display: 'flex',
+            alignItems: 'stretch',
+            flexWrap: 'wrap',
+          }}
+        >
           <div style={{
             flex: '1 1 50%',
             padding: '20px clamp(16px, 3%, 48px)',

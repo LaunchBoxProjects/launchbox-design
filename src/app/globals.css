@@ -97,3 +97,15 @@ wistia-player::part(container) {
     align-items: flex-start !important;
   }
 }
+
+@media (max-width: 600px) {
+  .ap-copy-row {
+    flex-direction: column;
+  }
+
+  .ap-copy-row > div {
+    flex: 1 1 100% !important;
+    width: 100%;
+    max-width: 100% !important;
+  }
+}

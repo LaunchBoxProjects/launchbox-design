@@ -108,13 +108,16 @@ export default function AbsolutePositioning() {
         <div style={{ height: '48px' }} />
 
         {/* Body copy */}
-        <div style={{
-          display: 'flex',
-          gap: '120px',
-          maxWidth: '1120px',
-          margin: '0 auto',
-          padding: '0 clamp(16px, 3%, 48px) clamp(32px, 4vw, 60px)',
-        }}>
+        <div
+          className="ap-copy-row"
+          style={{
+            display: 'flex',
+            gap: '120px',
+            maxWidth: '1120px',
+            margin: '0 auto',
+            padding: '0 clamp(16px, 3%, 48px) clamp(32px, 4vw, 60px)',
+          }}
+        >
           <div ref={copyLeftRef} style={{ flex: '1 1 0', textAlign: 'justify', hyphens: 'auto' }}>
             <Body size="regular">
               Investors don't fund the status quo. Customers don't switch

@@ -103,9 +103,25 @@ wistia-player::part(container) {
     flex-direction: column;
   }
 
-  .ap-copy-row > div {
+  .ap-copy-row > .ap-copy-col {
     flex: 1 1 100% !important;
     width: 100%;
     max-width: 100% !important;
+  }
+
+  .ap-copy-row > .ap-copy-square {
+    align-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .pricing-grid > div {
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--lb-semantic-color-border-default);
   }
 }

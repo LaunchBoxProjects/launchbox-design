@@ -268,11 +268,14 @@ function PlanCard({ plan, isMiddle }: PlanProps) {
 export default function Pricing() {
   return (
     <Container id="pricing">
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        alignItems: 'stretch',
-      }}>
+      <div
+        className="pricing-grid"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          alignItems: 'stretch',
+        }}
+      >
         {plans.map((plan, i) => (
           <PlanCard
             key={plan.name}

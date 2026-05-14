@@ -1,10 +1,13 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Container from '@/components/layout/Container';
 import Display from '@/components/typography/Display';
 import Body from '@/components/typography/Body';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const faqs = [
   {
@@ -92,9 +95,12 @@ function FAQItem({ question, answer, isLast }: FAQItemProps) {
   };
 
   return (
-    <div style={{
-      borderBottom: isLast ? 'none' : border,
-    }}>
+    <div
+      className="faq-item"
+      style={{
+        borderBottom: isLast ? 'none' : border,
+      }}
+    >
       {/* Question row */}
       <div
         onClick={toggle}
@@ -170,11 +176,38 @@ function FAQItem({ question, answer, isLast }: FAQItemProps) {
 }
 
 export default function FAQ() {
+  const faqRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const items = faqRef.current?.querySelectorAll('.faq-item');
+
+      items?.forEach((item, i) => {
+        gsap.from(item, {
+          opacity: 0,
+          y: 30,
+          duration: 0.6,
+          ease: 'power3.out',
+          delay: i * 0.08,
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 85%',
+          },
+        });
+      });
+    }, faqRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <Container>
-      <div style={{
-        padding: 'clamp(32px, 4vw, 60px) 0 0',
-      }}>
+      <div
+        ref={faqRef}
+        style={{
+          padding: 'clamp(32px, 4vw, 60px) 0 0',
+        }}
+      >
         {/* Section heading */}
         <div style={{
           padding: '0 clamp(16px, 3%, 48px)',

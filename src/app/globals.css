@@ -124,4 +124,8 @@ wistia-player::part(container) {
     border-right: none !important;
     border-bottom: 1px solid var(--lb-semantic-color-border-default);
   }
+
+  html, body {
+    overflow-x: hidden;
+  }
 }

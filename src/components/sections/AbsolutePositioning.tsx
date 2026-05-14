@@ -3,10 +3,11 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SplitText } from 'gsap/SplitText';
 import Container from '@/components/layout/Container';
 import Body from '@/components/typography/Body';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function AbsolutePositioning() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -19,30 +20,44 @@ export default function AbsolutePositioning() {
   useEffect(() => {
     const ctx = gsap.context(() => {
 
-  gsap.timeline({
-  scrollTrigger: {
-    trigger: boxRef.current,  // trigger on the square, not the section
-    start: 'top 95%',
-  }
-})
-.from(boxRef.current, {
-  scale: 0,
-  opacity: 0,
-  duration: 0.5,
-  ease: 'back.out(1.2)',
-})
-.from(positioningRef.current, {
-  yPercent: 30,
-  opacity: 0,
-  duration: 1,
-  ease: 'power3.out',
-}, '-=0.4')
-.from(absoluteRef.current, {
-  yPercent: 20,
-  opacity: 0,
-  duration: 1,
-  ease: 'power3.out',
-}, '-=0.6')
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: boxRef.current,  // trigger on the square, not the section
+          start: 'top 95%',
+        }
+      })
+        .from(boxRef.current, {
+          scale: 0,
+          opacity: 0,
+          duration: 0.5,
+          ease: 'back.out(1.2)',
+        });
+
+      // Animate POSITIONING first (closest to square), then ABSOLUTE
+      [positioningRef.current, absoluteRef.current].forEach((el, i) => {
+        if (!el) return;
+        const split = new SplitText(el, { type: 'chars' });
+        const center = (split.chars.length - 1) / 2;
+
+        const sorted = [...split.chars].sort((a, b) => {
+          const distA = Math.abs(split.chars.indexOf(a) - center);
+          const distB = Math.abs(split.chars.indexOf(b) - center);
+          return distA - distB;
+        });
+
+        gsap.from(sorted, {
+          opacity: 0,
+          yPercent: 60,
+          duration: 0.8,
+          ease: 'power3.out',
+          stagger: 0.03,
+          delay: i * 0.3,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 75%',
+          }
+        });
+      });
 
     }, sectionRef);
 

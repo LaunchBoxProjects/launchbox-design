@@ -7,7 +7,6 @@ import { SplitText } from 'gsap/SplitText';
 import Container from '@/components/layout/Container';
 import Body from '@/components/typography/Body';
 import Script from 'next/script';
-import SplineBox from '@/components/3D/SplineBox';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -105,16 +104,13 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right column — Spline + manifesto */}
+          {/* Right column — manifesto */}
           <div style={{
             flex: '0 1 50%',
             padding: 'clamp(24px, 4vw, 60px) clamp(16px, 3%, 48px)',
             display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-end',
-            gap: 'clamp(16px, 3vw, 32px)',
+            alignItems: 'flex-end',
           }}>
-            <SplineBox size="100%" />
             <Body size="small">
               {"Nobody cares about your brand if you don't. Nobody cares about brands and products that are like all the other ones. Nobody cares about brands that don't stand for anything. You aren't building for nobody. You're building for somebody."}
             </Body>

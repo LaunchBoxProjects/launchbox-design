@@ -120,7 +120,6 @@ export default function DeckInABox() {
             borderRight: creamBorder,
             display: 'flex',
             alignItems: 'center',
-            padding: '10px 10px 10px 10px',
           }}
         >
           <div style={{

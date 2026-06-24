@@ -68,7 +68,7 @@ export default function LogoTicker() {
                 src={logo.src}
                 alt={logo.alt}
                 width={logo.width}
-                height={70}
+                height={90}
                 style={{
                   objectFit: 'contain',
                   opacity: 0.8,

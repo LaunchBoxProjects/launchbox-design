@@ -114,7 +114,7 @@ function FAQItem({ question, answer, isLast }: FAQItemProps) {
         }}
       >
         <div style={{
-          fontFamily: 'var(--font-afacad)',
+          fontFamily: 'var(--font-ut-glorious)',
           fontSize: 'clamp(18px, 2vw, 28px)',
           fontWeight: '600',
           textTransform: 'uppercase',

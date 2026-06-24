@@ -74,8 +74,8 @@ function DeckButton() {
         gap: '10px',
         backgroundColor: 'var(--lb-semantic-color-surface-page)',
         color: 'var(--lb-semantic-color-text-primary)',
-        fontFamily: 'var(--font-albert-sans)',
-        fontSize: '16px',
+        fontFamily: 'var(--font-libertinus-serif)',
+        fontSize: 'clamp(18px, 2vw, 42px)',
         fontWeight: '400',
         padding: '16px 24px',
         border: 'none',
@@ -116,19 +116,20 @@ export default function DeckInABox() {
           ref={typeRef}
           style={{
             flex: '1 1 50%',
-            padding: 'clamp(24px, 4vw, 48px) clamp(16px, 3%, 48px)',
+            padding: 'clamp(24px, 5vw, 60px) clamp(16px, 3%, 60px)',
             borderRight: creamBorder,
             display: 'flex',
             alignItems: 'center',
+            padding: '10px 10px 10px 10px',
           }}
         >
           <div style={{
-            fontFamily: 'var(--font-afacad)',
+            fontFamily: 'var(--font-ut-glorious)',
             fontWeight: '700',
-            lineHeight: '0.9',
+            lineHeight: '0.8',
             textTransform: 'uppercase',
             color: 'var(--lb-semantic-color-text-inverse)',
-            fontSize: 'clamp(60px, 10vw, 190px)',
+            fontSize: 'clamp(120px, 14vw, 220px)',
             whiteSpace: 'nowrap',
           }}>
             DECK IN<br />A BOX
@@ -178,12 +179,12 @@ export default function DeckInABox() {
             {/* Price */}
             <div style={{
               flex: 1,
-              padding: '16px clamp(16px, 3%, 48px)',
+              padding: '16px 24px',
               display: 'flex',
               alignItems: 'center',
             }}>
               <div style={{
-                fontFamily: 'var(--font-afacad)',
+                fontFamily: 'var(--font-ut-glorious)',
                 fontSize: 'var(--lb-primitives-font-size-2xl)',
                 fontWeight: '700',
                 color: 'var(--lb-semantic-color-text-inverse)',

@@ -13,7 +13,7 @@
 body {
   background-color: var(--lb-semantic-color-surface-page);
   color: var(--lb-semantic-color-text-primary);
-  font-family: var(--font-albert-sans);
+  font-family: var(--font-libertinus-serif);
 }
 
 .inner {

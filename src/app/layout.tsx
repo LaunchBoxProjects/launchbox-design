@@ -1,17 +1,42 @@
 import type { Metadata } from "next";
-import { Afacad, Albert_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const afacad = Afacad({
-  subsets: ["latin"],
-  variable: "--font-afacad",
-  weight: ["400", "600", "700"],
+const utGlorious = localFont({
+  src: [
+    {
+      path: '../../public/fonts/UTGlorious-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/UTGlorious-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/UTGlorious-ExtraBold.woff2',
+      weight: '800',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-ut-glorious',
 });
 
-const albertSans = Albert_Sans({
-  subsets: ["latin"],
-  variable: "--font-albert-sans",
-  weight: ["300", "400", "700"],
+const libertinusSerif = localFont({
+  src: [
+    {
+      path: '../../public/fonts/LibertinusSerif-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/LibertinusSerif-Italic.woff2',
+      weight: '400',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-libertinus-serif',
 });
 
 export const metadata: Metadata = {
@@ -26,7 +51,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${afacad.variable} ${albertSans.variable}`}>
+      <body className={`${utGlorious.variable} ${libertinusSerif.variable}`}>
         {children}
       </body>
     </html>

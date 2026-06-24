@@ -58,15 +58,15 @@ export default function Hero() {
           {/* Left column — type */}
           <div style={{
             flex: '1 1 50%',
-            padding: 'clamp(24px, 4vw, 60px) clamp(16px, 3%, 48px)',
+            padding: 'clamp(16px, 2vw, 42px) clamp(16px, 2%, 24px)',
           }}>
             <div
               data-line="0"
               style={{
-                fontFamily: 'var(--font-afacad)',
-                fontSize: 'clamp(60px, 11vw, 190px)',
+                fontFamily: 'var(--font-ut-glorious)',
+                fontSize: 'clamp(120px, 18vw, 260px)',
                 fontWeight: '600',
-                lineHeight: '0.92',
+                lineHeight: '0.8',
                 textTransform: 'uppercase',
                 color: 'var(--lb-semantic-color-text-primary)',
                 whiteSpace: 'nowrap',
@@ -77,10 +77,10 @@ export default function Hero() {
             <div
               data-line="1"
               style={{
-                fontFamily: 'var(--font-afacad)',
-                fontSize: 'clamp(60px, 11vw, 190px)',
+                fontFamily: 'var(--font-ut-glorious)',
+                fontSize: 'clamp(120px, 18vw, 260px)',
                 fontWeight: '600',
-                lineHeight: '0.92',
+                lineHeight: '0.8',
                 textTransform: 'uppercase',
                 color: 'var(--lb-semantic-color-text-primary)',
                 whiteSpace: 'nowrap',
@@ -91,10 +91,10 @@ export default function Hero() {
             <div
               data-line="2"
               style={{
-                fontFamily: 'var(--font-afacad)',
-                fontSize: 'clamp(60px, 11vw, 190px)',
+                fontFamily: 'var(--font-ut-glorious)',
+                fontSize: 'clamp(120px, 18vw, 260px)',
                 fontWeight: '600',
-                lineHeight: '0.92',
+                lineHeight: '0.8',
                 textTransform: 'uppercase',
                 color: 'var(--lb-semantic-color-text-primary)',
                 whiteSpace: 'nowrap',
@@ -112,7 +112,7 @@ export default function Hero() {
             alignItems: 'flex-end',
           }}>
             <Body size="small">
-              {"Nobody cares about your brand if you don't. Nobody cares about brands and products that are like all the other ones. Nobody cares about brands that don't stand for anything. You aren't building for nobody. You're building for somebody."}
+              {"Nobody cares about your brand if you don't. Nobody cares about stuff that's like other stuff. Nobody cares about brands that don't stand for anything. You aren't building for nobody. You're building for somebody."}
             </Body>
           </div>
 
@@ -133,7 +133,7 @@ export default function Hero() {
             display: 'flex',
             alignItems: 'center',
           }}>
-            <Body size="small">
+            <Body>
               Brand and design systems for early-stage startups.
             </Body>
           </div>
@@ -144,8 +144,8 @@ export default function Hero() {
                 width: '100%',
                 backgroundColor: 'var(--lb-semantic-color-action-default)',
                 color: 'var(--lb-semantic-color-text-inverse)',
-                fontFamily: 'var(--font-albert-sans)',
-                fontSize: '16px',
+                fontFamily: 'var(--font-ut-glorious)',
+                fontSize: '32px',
                 fontWeight: '400',
                 padding: '20px 24px',
                 border: 'none',

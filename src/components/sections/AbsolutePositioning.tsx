@@ -75,8 +75,8 @@ export default function AbsolutePositioning() {
           <div
             ref={absoluteRef}
             style={{
-              fontFamily: 'Afacad, sans-serif',
-              fontWeight: '700',
+              fontFamily: 'UT Glorious, sans-serif',
+              fontWeight: '500',
               lineHeight: '0.9',
               color: 'var(--lb-semantic-color-text-primary)',
               textTransform: 'uppercase',
@@ -92,9 +92,9 @@ export default function AbsolutePositioning() {
           <div
             ref={positioningRef}
             style={{
-              fontFamily: 'Afacad, sans-serif',
-              fontWeight: '700',
-              lineHeight: '0.9',
+              fontFamily: 'UT Glorious, sans-serif',
+              fontWeight: '600',
+              lineHeight: '0.6',
               color: 'var(--lb-semantic-color-text-primary)',
               textTransform: 'uppercase',
               fontSize: '15vw',
@@ -125,7 +125,7 @@ export default function AbsolutePositioning() {
             className="ap-copy-col"
             style={{ flex: '1 1 0', textAlign: 'justify', hyphens: 'auto' }}
           >
-            <Body size="regular">
+            <Body size="small">
               Investors don't fund the status quo. Customers don't switch
               to the same old thing. AI and templates have raised the floor.
               To win you need to know the needs and motivations of your
@@ -148,13 +148,13 @@ export default function AbsolutePositioning() {
             className="ap-copy-col"
             style={{ flex: '1 1 0', textAlign: 'justify', hyphens: 'auto' }}
           >
-            <Body size="regular">
+            <Body size="small">
               This isn't simply a framework you apply. It's what happens
               at the intersection of intention, genuine empathy, and
               commitment to craft. Put simply, it's doing things that
               show you give a shit.
             </Body>
-            <Body size="regular" as="p">
+            <Body size="small" as="i">
               That's Absolute Positioning.
             </Body>
           </div>

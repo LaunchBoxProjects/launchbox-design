@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import Container from '@/components/layout/Container';
 import Body from '@/components/typography/Body';
@@ -9,7 +10,8 @@ import CTAPair from '@/components/ui/CTAPair';
 const plans = [
   {
     name: 'Ignite.',
-    audience: 'Early Stage Founders',
+    illustration: '/images/frog-tadpole.png',
+    audience: 'Early Stage\nFounders',
     tagline: 'Raise the bar.',
     price: '$7999',
     frequency: 'One Time',
@@ -24,7 +26,8 @@ const plans = [
   },
   {
     name: 'Launch.',
-    audience: 'Growing Startups',
+    illustration: '/images/frog-juvenile.png',
+    audience: 'Growing\nStartups',
     tagline: 'Branding built for scale.',
     price: '$4999',
     frequency: 'Per Month',
@@ -39,7 +42,8 @@ const plans = [
   },
   {
     name: 'Scale.',
-    audience: 'Incubators & Venture Studios',
+    illustration: '/images/frog-mature.png',
+    audience: 'Incubators &\nVenture Studios',
     tagline: 'Agility and consistency.',
     price: '$8999',
     frequency: 'Per Month',
@@ -81,10 +85,11 @@ function Checkmark() {
 
 interface PlanProps {
   plan: typeof plans[0];
+  illustration: string;
   isMiddle?: boolean;
 }
 
-function PlanCard({ plan, isMiddle }: PlanProps) {
+function PlanCard({ plan, illustration, isMiddle }: PlanProps) {
   const coverRef = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState(false);
   const border = '1px solid var(--lb-semantic-color-border-default)';
@@ -140,7 +145,7 @@ function PlanCard({ plan, isMiddle }: PlanProps) {
         }}>
           {/* Plan name */}
           <div style={{
-            fontFamily: 'var(--font-afacad)',
+            fontFamily: 'var(--font-ut-glorious)',
             fontSize: 'clamp(24px, 3vw, 42px)',
             fontWeight: '700',
             textTransform: 'uppercase',
@@ -152,7 +157,7 @@ function PlanCard({ plan, isMiddle }: PlanProps) {
 
           {/* Price */}
           <div style={{
-            fontFamily: 'var(--font-afacad)',
+            fontFamily: 'var(--font-ut-glorious)',
             fontSize: 'var(--lb-primitives-font-size-2xl)',
             fontWeight: '700',
             color: 'var(--lb-semantic-color-text-primary)',
@@ -164,7 +169,7 @@ function PlanCard({ plan, isMiddle }: PlanProps) {
 
           {/* Frequency */}
           <div style={{
-            fontFamily: 'var(--font-albert-sans)',
+            fontFamily: 'var(--font-libertinus-serif)',
             fontSize: '16px',
             fontWeight: '700',
             color: 'var(--lb-semantic-color-text-primary)',
@@ -226,7 +231,7 @@ function PlanCard({ plan, isMiddle }: PlanProps) {
         }}
       >
         <div style={{
-          fontFamily: 'var(--font-afacad)',
+          fontFamily: 'var(--font-ut-glorious)',
           fontSize: 'clamp(24px, 3vw, 36px)',
           fontWeight: '700',
           textTransform: 'uppercase',
@@ -235,6 +240,7 @@ function PlanCard({ plan, isMiddle }: PlanProps) {
             : 'var(--lb-semantic-color-text-primary)',
           marginBottom: '24px',
           lineHeight: '1',
+          whiteSpace: 'pre-line',
           transition: 'color 0.2s ease',
         }}>
           {plan.audience}
@@ -248,7 +254,7 @@ function PlanCard({ plan, isMiddle }: PlanProps) {
           transition: 'border-color 0.2s ease',
         }} />
         <div style={{
-          fontFamily: 'var(--font-afacad)',
+          fontFamily: 'var(--font-ut-glorious)',
           fontSize: 'clamp(20px, 2.5vw, 32px)',
           fontWeight: '400',
           color: hovered
@@ -258,6 +264,29 @@ function PlanCard({ plan, isMiddle }: PlanProps) {
           transition: 'color 0.2s ease',
         }}>
           {plan.tagline}
+        </div>
+        <div
+          style={{
+            width: '220px',
+            height: '220px',
+            flexShrink: 0,
+            marginTop: '16px',
+            position: 'relative',
+          }}
+        >
+          <Image
+            key={illustration}
+            src={illustration}
+            alt={plan.name}
+            fill
+            sizes="240px"
+            style={{
+              objectFit: 'contain',
+              opacity: 0.85,
+              filter: hovered ? 'brightness(0) invert(1)' : 'none',
+              transition: 'filter 0.2s ease',
+            }}
+          />
         </div>
       </div>
 
@@ -280,6 +309,7 @@ export default function Pricing() {
           <PlanCard
             key={plan.name}
             plan={plan}
+            illustration={plan.illustration}
             isMiddle={i === 1}
           />
         ))}

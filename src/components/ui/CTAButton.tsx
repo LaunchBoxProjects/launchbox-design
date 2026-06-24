@@ -67,7 +67,7 @@ export default function CTAButton({
           ? 'none'
           : '1px solid var(--lb-semantic-color-border-default)',
         fontFamily: 'var(--font-albert-sans)',
-        fontSize: '16px',
+        fontSize: '24px',
         fontWeight: '400',
         padding: '16px 24px',
         cursor: 'pointer',

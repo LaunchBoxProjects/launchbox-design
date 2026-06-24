@@ -18,7 +18,7 @@ export default function Display({
 }: DisplayProps) {
   return (
     <Tag style={{
-      fontFamily: 'var(--font-afacad)',
+      fontFamily: 'var(--font-ut-glorious)',
       fontSize: sizeClamp[size],
       fontWeight: `var(--lb-semantic-typography-display-${size}-font-weights)`,
       lineHeight: '0.75',

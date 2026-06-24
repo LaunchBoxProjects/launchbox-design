@@ -13,7 +13,7 @@ export default function Body({
 }: BodyProps) {
   return (
     <Tag style={{
-      fontFamily: 'var(--font-albert-sans)',
+      fontFamily: 'var(--font-libertinus-serif)',
       fontSize: `var(--lb-semantic-typography-body-${size}-font-sizes)`,
       fontWeight: `var(--lb-semantic-typography-body-${size}-font-weights)`,
       lineHeight: `var(--lb-semantic-typography-body-${size}-line-heights)`,

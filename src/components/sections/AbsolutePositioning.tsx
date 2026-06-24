@@ -154,7 +154,7 @@ export default function AbsolutePositioning() {
               commitment to craft. Put simply, it's doing things that
               show you give a shit.
             </Body>
-            <Body size="small" as="i">
+            <Body size="small">
               That's Absolute Positioning.
             </Body>
           </div>

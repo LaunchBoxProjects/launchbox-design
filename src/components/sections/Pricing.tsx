@@ -267,8 +267,8 @@ function PlanCard({ plan, illustration, isMiddle }: PlanProps) {
         </div>
         <div
           style={{
-            width: '220px',
-            height: '220px',
+            width: '260px',
+            height: '260px',
             flexShrink: 0,
             marginTop: '16px',
             position: 'relative',

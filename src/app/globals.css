@@ -85,14 +85,7 @@ wistia-player::part(container) {
   }
 
   .hero-mark {
-    position: relative;
-    top: auto;
-    right: auto;
-    order: -1;
-    align-self: flex-end;
-    flex: 0 0 auto !important;
-    width: auto !important;
-    padding: clamp(16px, 2vw, 42px) clamp(16px, 3%, 48px) 0 0;
+    display: none !important;
   }
 
   .hero-manifesto {

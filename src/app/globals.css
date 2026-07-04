@@ -100,6 +100,11 @@ wistia-player::part(container) {
     align-items: flex-start !important;
   }
 
+  .hero-stamp {
+    top: 45% !important;
+    left: 25% !important;
+  }
+
   .hero-button-row {
     flex-direction: column;
   }

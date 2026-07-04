@@ -112,7 +112,7 @@ export default function Hero() {
             alignItems: 'flex-end',
           }}>
             <Body size="small">
-              {"Nobody cares about your brand if you don't. Nobody cares about stuff that's like other stuff. Nobody cares about brands that don't stand for anything. You aren't building for nobody. You're building for somebody."}
+              {"Nobody cares about your brand if you don't. Nobody cares about stuff that's like other stuff. But you aren't building for nobody. You're building for somebody."}
             </Body>
           </div>
 

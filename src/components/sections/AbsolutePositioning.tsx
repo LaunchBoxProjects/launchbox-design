@@ -75,7 +75,7 @@ export default function AbsolutePositioning() {
           <div
             ref={absoluteRef}
             style={{
-              fontFamily: 'UT Glorious, sans-serif',
+              fontFamily: 'var(--font-ut-glorious)',
               fontWeight: '500',
               lineHeight: '0.9',
               color: 'var(--lb-semantic-color-text-primary)',
@@ -92,7 +92,7 @@ export default function AbsolutePositioning() {
           <div
             ref={positioningRef}
             style={{
-              fontFamily: 'UT Glorious, sans-serif',
+              fontFamily: 'var(--font-ut-glorious)',
               fontWeight: '600',
               lineHeight: '0.6',
               color: 'var(--lb-semantic-color-text-primary)',

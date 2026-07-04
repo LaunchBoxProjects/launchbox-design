@@ -78,9 +78,26 @@ wistia-player::part(container) {
     flex-direction: column;
   }
 
-  .hero-columns > div {
+  .hero-columns > .hero-type,
+  .hero-columns > .hero-manifesto {
     flex: 1 1 100% !important;
     width: 100%;
+  }
+
+  .hero-mark {
+    position: relative;
+    top: auto;
+    right: auto;
+    order: -1;
+    align-self: flex-end;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    padding: clamp(16px, 2vw, 42px) clamp(16px, 3%, 48px) 0 0;
+  }
+
+  .hero-manifesto {
+    padding-top: 0 !important;
+    align-items: flex-start !important;
   }
 
   .hero-button-row {
@@ -90,11 +107,6 @@ wistia-player::part(container) {
   .hero-button-row > div {
     flex: 1 1 100% !important;
     width: 100%;
-  }
-
-  .hero-columns > div:last-child {
-    padding-top: 0 !important;
-    align-items: flex-start !important;
   }
 }
 

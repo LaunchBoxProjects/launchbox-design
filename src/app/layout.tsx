@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Bungee_Inline } from 'next/font/google';
 import "./globals.css";
 
 const utGlorious = localFont({
@@ -39,6 +40,12 @@ const libertinusSerif = localFont({
   variable: '--font-libertinus-serif',
 });
 
+const bungeeInline = Bungee_Inline({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-bungee-inline',
+});
+
 export const metadata: Metadata = {
   title: "LaunchBox Design",
   description: "Launch like you mean it.",
@@ -51,7 +58,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${utGlorious.variable} ${libertinusSerif.variable}`}>
+      <body className={`${utGlorious.variable} ${libertinusSerif.variable} ${bungeeInline.variable}`}>
         {children}
       </body>
     </html>

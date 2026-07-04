@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
@@ -108,7 +109,7 @@ export default function AbsolutePositioning() {
           </div>
         </div>
 
-        {/* Body copy + square (single row; stacks on mobile) */}
+        {/* Body copy + mark (single row; stacks on mobile) */}
         <div
           className="ap-copy-row"
           style={{
@@ -136,13 +137,20 @@ export default function AbsolutePositioning() {
             ref={boxRef}
             className="ap-copy-square"
             style={{
-              width: '80px',
-              height: '80px',
+              width: '120px',
+              aspectRatio: '782 / 734',
               flexShrink: 0,
-              backgroundColor: 'var(--lb-semantic-color-action-default)',
-              boxShadow: '0px 71px 80px 0px #0000001C, 0px 46.02px 46.85px 0px #00000015, 0px 27.35px 25.48px 0px #00000011, 0px 14.2px 13px 0px #0000000E, 0px 5.79px 6.52px 0px #0000000B, 0px 1.31px 3.15px 0px #00000007',
+              position: 'relative',
             }}
-          />
+          >
+            <Image
+              src="/images/launchbox_mark.png"
+              alt="LaunchBox mark"
+              fill
+              sizes="120px"
+              style={{ objectFit: 'contain' }}
+            />
+          </div>
           <div
             ref={copyRightRef}
             className="ap-copy-col"

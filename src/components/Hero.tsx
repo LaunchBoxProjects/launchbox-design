@@ -147,7 +147,7 @@ export default function Hero() {
             style={{
               position: 'absolute',
               top: '50%',
-              left: '45%',
+              left: '45 %',
               transform: 'translateY(-50%)',
               backgroundColor: 'var(--lb-semantic-color-action-default)',
               padding: '8px 16px',

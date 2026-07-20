@@ -59,6 +59,107 @@ body {
   }
 }
 
+.pricing-editorial {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  min-height: clamp(320px, 30vw, 440px);
+}
+
+.pricing-title-rail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--lb-semantic-color-border-default);
+}
+
+.pricing-title-rail h2 {
+  font-family: var(--font-ut-glorious);
+  font-size: clamp(44px, 4.8vw, 70px);
+  font-weight: 700;
+  line-height: 0.8;
+  color: var(--lb-semantic-color-action-default);
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: rotate(-90deg);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+}
+
+.pricing-plan-card {
+  min-height: clamp(320px, 30vw, 440px);
+}
+
+.pricing-cover-card {
+  padding: clamp(24px, 3vw, 44px) clamp(18px, 3vw, 40px) clamp(20px, 2.5vw, 34px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  transform: translateY(0);
+  transition:
+    transform 0.55s cubic-bezier(0.76, 0, 0.24, 1),
+    background-color 0.2s ease;
+  will-change: transform;
+}
+
+.pricing-plan-card:hover .pricing-cover-card {
+  background-color: var(--lb-semantic-color-action-default);
+  transform: translateY(-100%);
+}
+
+.pricing-plan-card:hover .pricing-cover-audience,
+.pricing-plan-card:hover .pricing-cover-copy {
+  color: var(--lb-semantic-color-text-inverse);
+}
+
+.pricing-cover-audience {
+  font-family: var(--font-ut-glorious);
+  font-size: clamp(24px, 2.5vw, 40px);
+  font-weight: 600;
+  line-height: 0.86;
+  color: var(--lb-semantic-color-text-primary);
+  text-transform: uppercase;
+  white-space: pre-line;
+  transition: color 0.2s ease;
+}
+
+.pricing-cover-copy {
+  margin-top: 16px;
+  font-family: var(--font-libertinus-serif);
+  font-size: clamp(17px, 1.35vw, 24px);
+  line-height: 1.2;
+  color: var(--lb-semantic-color-text-primary);
+  transition: color 0.2s ease;
+}
+
+.pricing-cover-image {
+  position: relative;
+  width: 100%;
+  height: clamp(150px, 18vw, 260px);
+  margin-top: clamp(20px, 3vw, 48px);
+}
+
+.pricing-plan-card:hover .pricing-cover-image img {
+  filter: brightness(0) invert(1);
+}
+
+.pricing-manifesto {
+  border-top: 1px solid var(--lb-semantic-color-border-default);
+  padding: clamp(24px, 3vw, 40px) clamp(20px, 3vw, 48px);
+  font-family: var(--font-ut-glorious);
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 700;
+  line-height: 0.9;
+  color: var(--lb-semantic-color-action-default);
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 @media (max-width: 600px) {
   .deck-columns {
     flex-direction: column;
@@ -125,6 +226,22 @@ wistia-player::part(container) {
 }
 
 @media (max-width: 600px) {
+  .pricing-editorial {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .pricing-title-rail {
+    min-height: 132px;
+    border-right: none;
+    border-bottom: 1px solid var(--lb-semantic-color-border-default);
+  }
+
+  .pricing-title-rail h2 {
+    transform: none;
+    font-size: clamp(52px, 16vw, 76px);
+  }
+
   .pricing-grid {
     grid-template-columns: 1fr !important;
   }
@@ -133,6 +250,23 @@ wistia-player::part(container) {
     border-left: none !important;
     border-right: none !important;
     border-bottom: 1px solid var(--lb-semantic-color-border-default);
+  }
+
+  .pricing-plan-card {
+    min-height: 420px;
+  }
+
+  .pricing-cover-card {
+    min-height: 420px;
+  }
+
+  .pricing-cover-image {
+    height: 180px;
+  }
+
+  .pricing-manifesto {
+    text-align: left;
+    white-space: normal;
   }
 
   html, body {

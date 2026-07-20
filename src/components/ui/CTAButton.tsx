@@ -67,22 +67,32 @@ export default function CTAButton({
           ? 'none'
           : '1px solid var(--lb-semantic-color-border-default)',
         fontFamily: 'var(--font-albert-sans)',
-        fontSize: '24px',
+        fontSize: 'clamp(15px, 1.35vw, 22px)',
         fontWeight: '400',
-        padding: '16px 24px',
+        minHeight: '58px',
+        padding: '14px clamp(8px, 1.4vw, 18px)',
         cursor: 'pointer',
-        letterSpacing: '0.05em',
+        letterSpacing: '0.02em',
         textDecoration: 'none',
         whiteSpace: 'nowrap',
+        minWidth: 0,
+        overflow: 'hidden',
       }}
     >
-      {label}
+      <span style={{
+        minWidth: 0,
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+      }}>
+        {label}
+      </span>
       {icon && (
         <svg
-          width="20"
-          height="20"
+          width="18"
+          height="18"
           viewBox="0 0 20 20"
           fill="none"
+          style={{ flexShrink: 0 }}
         >
           <circle
             cx="10"

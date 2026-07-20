@@ -1,10 +1,7 @@
 'use client';
 
-import { useRef, useState } from 'react';
 import Image from 'next/image';
-import gsap from 'gsap';
 import Container from '@/components/layout/Container';
-import Body from '@/components/typography/Body';
 import CTAPair from '@/components/ui/CTAPair';
 
 const plans = [
@@ -12,48 +9,51 @@ const plans = [
     name: 'Ignite.',
     illustration: '/images/frog-tadpole.png',
     audience: 'Early Stage\nFounders',
+    coverCopy: 'Foundational brand & design.',
     tagline: 'Raise the bar.',
     price: '$7999',
     frequency: 'One Time',
     stripeLink: 'https://buy.stripe.com/5kQ4gz5FJ9FCahl4ilbfO0y',
-    description: 'Get started quickly with everything you need to raise and launch. A solid foundation delivered in 30 days. Get positive feedback from 3 investors, or we keep working.',
+    description: 'Brand, MVP UI, deck, and landing page in 30 days. Investor-ready, or we keep working.',
     features: [
-      'Brand Design',
+      'Brand System',
       'MVP UI/UX',
       'Pitch Deck',
-      'Landing Page Design',
+      'Landing Page',
     ],
   },
   {
     name: 'Launch.',
     illustration: '/images/frog-juvenile.png',
     audience: 'Growing\nStartups',
+    coverCopy: 'Scalable systems.',
     tagline: 'Branding built for scale.',
     price: '$4999',
     frequency: 'Per Month',
     stripeLink: 'https://buy.stripe.com/dR67w78cUeem0OA7sC',
-    description: 'Scalable brand development and design for fast moving startups. Get everything you need to launch, from UI/UX and landing pages, to social media and pitch decks.',
+    description: 'Ongoing brand, UI, deck, and launch design for fast-moving startup teams.',
     features: [
-      'Unlimited design, 1 at a time',
-      'Designs delivered in < 48hrs',
-      'Senior human designers',
-      '1/4 the cost of full-time',
+      'Unlimited Design',
+      '< 48hr Delivery',
+      'Senior Designers',
+      '1/4 Full-Time Cost',
     ],
   },
   {
     name: 'Scale.',
     illustration: '/images/frog-mature.png',
     audience: 'Incubators &\nVenture Studios',
+    coverCopy: 'Agility and consistency.',
     tagline: 'Agility and consistency.',
     price: '$8999',
     frequency: 'Per Month',
     stripeLink: 'https://buy.stripe.com/00w4gz6JNaJG6154ilbfO0B',
-    description: 'A perfect package for incubators and holdcos with multiple brands under one roof. More bandwidth for your partners, one locus of responsibility, and world-class quality.',
+    description: 'Design bandwidth and brand-system consistency across multiple portfolio companies.',
     features: [
-      'Unlimited brands, 3 designs at a time',
-      'Designs delivered in < 48 hrs',
-      'Multiple brands allowed',
-      'Superior BMF and GTM branding',
+      'Unlimited Brands',
+      '3 Designs At A Time',
+      '< 48hr Delivery',
+      'BMF & GTM Branding',
     ],
   },
 ];
@@ -61,8 +61,8 @@ const plans = [
 function Checkmark() {
   return (
     <div style={{
-      width: '32px',
-      height: '32px',
+      width: '26px',
+      height: '26px',
       backgroundColor: 'var(--lb-semantic-color-text-primary)',
       borderRadius: '2px',
       flexShrink: 0,
@@ -70,7 +70,7 @@ function Checkmark() {
       alignItems: 'center',
       justifyContent: 'center',
     }}>
-      <svg width="14" height="11" viewBox="0 0 14 11" fill="none">
+      <svg width="12" height="10" viewBox="0 0 14 11" fill="none">
         <path
           d="M1 5L5 9L13 1"
           stroke="var(--lb-semantic-color-text-inverse)"
@@ -90,39 +90,11 @@ interface PlanProps {
 }
 
 function PlanCard({ plan, illustration, isMiddle }: PlanProps) {
-  const coverRef = useRef<HTMLDivElement>(null);
-  const [hovered, setHovered] = useState(false);
   const border = '1px solid var(--lb-semantic-color-border-default)';
-
-  const handleMouseEnter = () => {
-    setHovered(true);
-    setTimeout(() => {
-      if (coverRef.current) {
-        gsap.to(coverRef.current, {
-          yPercent: -100,
-          duration: 0.5,
-          ease: 'power3.inOut',
-        });
-      }
-    }, 200);
-  };
-
-  const handleMouseLeave = () => {
-    setHovered(false);
-    if (coverRef.current) {
-      gsap.to(coverRef.current, {
-        yPercent: 0,
-        duration: 0.6,
-        ease: 'back.out(1.4)',
-        onComplete: () => setHovered(false),
-      });
-    }
-  };
 
   return (
     <div
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      className="pricing-plan-card"
       style={{
         position: 'relative',
         overflow: 'hidden',
@@ -139,18 +111,18 @@ function PlanCard({ plan, illustration, isMiddle }: PlanProps) {
       }}>
         <div style={{
           flex: 1,
-          padding: 'clamp(32px, 4vw, 48px) clamp(16px, 3%, 40px)',
+          padding: 'clamp(22px, 2.6vw, 34px) clamp(14px, 2.4vw, 32px)',
           display: 'flex',
           flexDirection: 'column',
         }}>
           {/* Plan name */}
           <div style={{
             fontFamily: 'var(--font-ut-glorious)',
-            fontSize: 'clamp(24px, 3vw, 42px)',
+            fontSize: 'clamp(22px, 2.3vw, 34px)',
             fontWeight: '700',
             textTransform: 'uppercase',
             color: 'var(--lb-semantic-color-text-primary)',
-            marginBottom: '16px',
+            marginBottom: '8px',
           }}>
             {plan.name}
           </div>
@@ -158,11 +130,11 @@ function PlanCard({ plan, illustration, isMiddle }: PlanProps) {
           {/* Price */}
           <div style={{
             fontFamily: 'var(--font-ut-glorious)',
-            fontSize: 'var(--lb-primitives-font-size-2xl)',
+            fontSize: 'clamp(48px, 5vw, 64px)',
             fontWeight: '700',
             color: 'var(--lb-semantic-color-text-primary)',
             lineHeight: '1',
-            marginBottom: '8px',
+            marginBottom: '4px',
           }}>
             {plan.price}
           </div>
@@ -179,25 +151,37 @@ function PlanCard({ plan, illustration, isMiddle }: PlanProps) {
           </div>
 
           {/* Description */}
-          <Body size="small">
+          <p style={{
+            fontFamily: 'var(--font-libertinus-serif)',
+            fontSize: 'clamp(14px, 1.1vw, 16px)',
+            lineHeight: '1.25',
+            color: 'var(--lb-semantic-color-text-primary)',
+          }}>
             {plan.description}
-          </Body>
+          </p>
 
           {/* Features */}
           <div style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '12px',
-            margin: '24px 0',
+            gap: '8px',
+            margin: '16px 0 0',
           }}>
             {plan.features.map((feature, i) => (
               <div key={i} style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '12px',
+                gap: '10px',
               }}>
                 <Checkmark />
-                <Body size="small">{feature}</Body>
+                <span style={{
+                  fontFamily: 'var(--font-libertinus-serif)',
+                  fontSize: 'clamp(14px, 1.1vw, 16px)',
+                  lineHeight: '1.15',
+                  color: 'var(--lb-semantic-color-text-primary)',
+                }}>
+                  {feature}
+                </span>
               </div>
             ))}
           </div>
@@ -213,78 +197,33 @@ function PlanCard({ plan, illustration, isMiddle }: PlanProps) {
 
       {/* Cover card — slides up on hover */}
       <div
-        ref={coverRef}
+        className="pricing-cover-card"
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundColor: hovered
-            ? 'var(--lb-semantic-color-action-default)'
-            : 'var(--lb-semantic-color-surface-page)',
-          padding: 'clamp(32px, 4vw, 48px) clamp(16px, 3%, 40px)',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          textAlign: 'center',
+          backgroundColor: 'var(--lb-semantic-color-surface-page)',
           cursor: 'pointer',
-          transition: 'background-color 0.2s ease',
         }}
       >
-        <div style={{
-          fontFamily: 'var(--font-ut-glorious)',
-          fontSize: 'clamp(24px, 3vw, 36px)',
-          fontWeight: '700',
-          textTransform: 'uppercase',
-          color: hovered
-            ? 'var(--lb-semantic-color-text-inverse)'
-            : 'var(--lb-semantic-color-text-primary)',
-          marginBottom: '24px',
-          lineHeight: '1',
-          whiteSpace: 'pre-line',
-          transition: 'color 0.2s ease',
-        }}>
-          {plan.audience}
+        <div>
+          <h3 className="pricing-cover-audience">
+            {plan.audience}
+          </h3>
+          <p className="pricing-cover-copy">
+            {plan.coverCopy}
+          </p>
         </div>
-        <div style={{
-          width: '60px',
-          borderTop: hovered
-            ? '2px solid var(--lb-semantic-color-text-inverse)'
-            : '2px solid var(--lb-semantic-color-border-default)',
-          marginBottom: '24px',
-          transition: 'border-color 0.2s ease',
-        }} />
-        <div style={{
-          fontFamily: 'var(--font-ut-glorious)',
-          fontSize: 'clamp(20px, 2.5vw, 32px)',
-          fontWeight: '400',
-          color: hovered
-            ? 'var(--lb-semantic-color-text-inverse)'
-            : 'var(--lb-semantic-color-text-primary)',
-          fontStyle: 'italic',
-          transition: 'color 0.2s ease',
-        }}>
-          {plan.tagline}
-        </div>
-        <div
-          style={{
-            width: '260px',
-            height: '260px',
-            flexShrink: 0,
-            marginTop: '16px',
-            position: 'relative',
-          }}
-        >
+
+        <div className="pricing-cover-image" style={{ position: 'relative' }}>
           <Image
             key={illustration}
             src={illustration}
             alt={plan.name}
             fill
-            sizes="240px"
+            sizes="(max-width: 600px) 72vw, 28vw"
             style={{
               objectFit: 'contain',
               opacity: 0.85,
-              filter: hovered ? 'brightness(0) invert(1)' : 'none',
-              transition: 'filter 0.2s ease',
             }}
           />
         </div>
@@ -297,22 +236,25 @@ function PlanCard({ plan, illustration, isMiddle }: PlanProps) {
 export default function Pricing() {
   return (
     <Container id="pricing">
-      <div
-        className="pricing-grid"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          alignItems: 'stretch',
-        }}
-      >
-        {plans.map((plan, i) => (
-          <PlanCard
-            key={plan.name}
-            plan={plan}
-            illustration={plan.illustration}
-            isMiddle={i === 1}
-          />
-        ))}
+      <div className="pricing-editorial">
+        <div className="pricing-title-rail">
+          <h2>Plans &amp; Prices</h2>
+        </div>
+
+        <div className="pricing-grid">
+          {plans.map((plan, i) => (
+            <PlanCard
+              key={plan.name}
+              plan={plan}
+              illustration={plan.illustration}
+              isMiddle={i === 1}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="pricing-manifesto">
+        WE MEET YOU WHERE YOU&rsquo;RE AT AND HELP GET YOU TO WHERE YOU&rsquo;RE GOING
       </div>
     </Container>
   );

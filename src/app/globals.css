@@ -59,86 +59,6 @@ body {
   }
 }
 
-.pricing-editorial {
-  display: grid;
-  grid-template-columns: 112px 1fr;
-  min-height: clamp(360px, 36vw, 520px);
-}
-
-.pricing-title-rail {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-right: 1px solid var(--lb-semantic-color-border-default);
-}
-
-.pricing-title-rail h2 {
-  font-family: var(--font-ut-glorious);
-  font-size: clamp(44px, 5vw, 72px);
-  font-weight: 700;
-  line-height: 0.8;
-  color: var(--lb-semantic-color-action-default);
-  text-transform: uppercase;
-  white-space: nowrap;
-  transform: rotate(-90deg);
-}
-
-.pricing-plan-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.pricing-plan-panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-width: 0;
-  padding: clamp(32px, 4vw, 64px) clamp(20px, 3vw, 40px) clamp(28px, 4vw, 52px);
-  border-right: 1px solid var(--lb-semantic-color-border-default);
-}
-
-.pricing-plan-panel:last-child {
-  border-right: none;
-}
-
-.pricing-plan-audience {
-  font-family: var(--font-ut-glorious);
-  font-size: clamp(28px, 3.2vw, 44px);
-  font-weight: 600;
-  line-height: 0.86;
-  color: var(--lb-semantic-color-text-primary);
-  text-transform: uppercase;
-  white-space: pre-line;
-}
-
-.pricing-plan-tagline {
-  margin-top: 20px;
-  font-family: var(--font-libertinus-serif);
-  font-size: clamp(20px, 1.8vw, 28px);
-  line-height: 1.2;
-  color: var(--lb-semantic-color-text-primary);
-}
-
-.pricing-plan-image {
-  position: relative;
-  width: 100%;
-  height: clamp(130px, 16vw, 230px);
-  margin-top: clamp(36px, 6vw, 88px);
-}
-
-.pricing-manifesto {
-  border-top: 1px solid var(--lb-semantic-color-border-default);
-  padding: clamp(28px, 3.6vw, 44px) clamp(20px, 3vw, 48px);
-  font-family: var(--font-ut-glorious);
-  font-size: clamp(30px, 3.1vw, 44px);
-  font-weight: 700;
-  line-height: 0.9;
-  color: var(--lb-semantic-color-action-default);
-  text-align: center;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
 @media (max-width: 600px) {
   .deck-columns {
     flex-direction: column;
@@ -205,43 +125,14 @@ wistia-player::part(container) {
 }
 
 @media (max-width: 600px) {
-  .pricing-editorial {
+  .pricing-grid {
     grid-template-columns: 1fr !important;
-    min-height: auto;
   }
 
-  .pricing-title-rail {
-    min-height: 140px;
-    border-right: none;
+  .pricing-grid > div {
+    border-left: none !important;
+    border-right: none !important;
     border-bottom: 1px solid var(--lb-semantic-color-border-default);
-  }
-
-  .pricing-title-rail h2 {
-    transform: none;
-    font-size: clamp(52px, 16vw, 76px);
-  }
-
-  .pricing-plan-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .pricing-plan-panel {
-    min-height: 360px;
-    border-right: none;
-    border-bottom: 1px solid var(--lb-semantic-color-border-default);
-  }
-
-  .pricing-plan-panel:last-child {
-    border-bottom: none;
-  }
-
-  .pricing-plan-image {
-    height: 180px;
-  }
-
-  .pricing-manifesto {
-    text-align: left;
-    white-space: normal;
   }
 
   html, body {

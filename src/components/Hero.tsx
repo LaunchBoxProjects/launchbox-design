@@ -173,36 +173,42 @@ export default function Hero() {
           style={{
             display: 'flex',
             alignItems: 'stretch',
-            flexWrap: 'wrap',
+            flexWrap: 'nowrap',
           }}
         >
-          <div style={{
+          <div className="hero-subhead-cell" style={{
             flex: '1 1 50%',
-            padding: '20px clamp(16px, 3%, 48px)',
+            minWidth: 0,
+            padding: '18px clamp(16px, 3%, 48px)',
             display: 'flex',
             alignItems: 'center',
           }}>
-            <Body>
+            <Body as="span">
               Brand and design systems for early-stage startups.
             </Body>
           </div>
-          <div style={{ flex: '1 0 50%', display: 'flex' }}>
+          <div className="hero-pricing-button-cell" style={{ flex: '1 1 50%', minWidth: 0, display: 'flex' }}>
             <a
               href="#pricing"
+              className="hero-pricing-button"
               style={{
                 width: '100%',
                 backgroundColor: 'var(--lb-semantic-color-action-default)',
                 color: 'var(--lb-semantic-color-text-inverse)',
                 fontFamily: 'var(--font-ut-glorious)',
-                fontSize: '32px',
+                fontSize: 'clamp(24px, 2.4vw, 38px)',
                 fontWeight: '400',
-                padding: '20px 24px',
+                padding: '18px 24px',
                 border: 'none',
                 cursor: 'pointer',
-                letterSpacing: '0.05em',
-                display: 'block',
+                letterSpacing: '0.02em',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
                 textAlign: 'center',
                 textDecoration: 'none',
+                whiteSpace: 'nowrap',
+                minWidth: 0,
               }}
             >
               Plans &amp; Pricing
@@ -226,6 +232,11 @@ export default function Hero() {
           <wistia-player
             media-id="0zs6dabbwt"
             aspect="1.7777777777777777"
+            autoplay
+            muted
+            silent-autoplay="true"
+            playsinline="true"
+            preload="auto"
             style={{
               width: '100%',
               height: '100%',
